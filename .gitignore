@@ -1,0 +1,23 @@
+# Project exclude paths
+/.tox/
+/tmp/
+/build/
+/.pytest_cache/
+/results/
+/src/*.egg-info
+/.idea
+*__pycache__
+.env
+/cache/
+/data/files
+/.vscode/
+/.idea/
+/.venv/
+temp/
+tmp/
+.temp/
+.tmp/
+storage/
+.ipynb_checkpoints/
+malware_samples/*
+

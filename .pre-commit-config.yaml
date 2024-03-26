@@ -1,0 +1,37 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: jupyter-nb-clear-output
+        name: jupyter-nb-clear-output
+        files: \.ipynb$
+        stages: [commit]
+        language: system
+        entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --ClearMetadataPreprocessor.enabled=True --inplace
+-   repo: https://github.com/psf/black
+    rev: 23.7.0
+    hooks:
+    -   id: black
+        language_version: python3.10
+-   repo: https://github.com/psf/black
+    rev: 23.7.0
+    hooks:
+    -   id: black-jupyter
+        language_version: python3.10
+-   repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+    -   id: isort
+        name: isort (python)
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.0.280
+    hooks:
+    -   id: ruff
+        types_or: [python, pyi, jupyter]
+        args: [--fix, --exit-non-zero-on-fix]
+-   repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v2.10.0
+    hooks:
+    -   id: pretty-format-toml
+        args: [--autofix, --indent, '4']
+    -   id: pretty-format-yaml
+        args: [--autofix, --indent, '4']
